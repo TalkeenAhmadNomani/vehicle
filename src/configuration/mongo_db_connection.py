@@ -4,10 +4,8 @@ import certifi
 
 from src.exception import MyException
 from src.logger import logging
-from src.constants import DATABASE_NAME
+from src.constants import DATABASE_NAME, MONGODB_URI_KEY
 
-# Hardcoded MongoDB URI here (replace with your actual URI)
-MONGODB_URL = "mongodb+srv://talkeennomani:kStykEv58daloXay@cluster0.urmjr0m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 ca = certifi.where()
 
@@ -17,11 +15,11 @@ class MongoDBClient:
     def __init__(self, database_name: str = DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
-                mongo_db_url = MONGODB_URL  # Use hardcoded URI here
+                mongo_db_url = MONGODB_URI_KEY  # Use hardcoded URI here
                 print(f"MongoDB URL used: {mongo_db_url}")  # Debug print
 
-                if not (mongo_db_url.startswith("mongodb://") or mongo_db_url.startswith("mongodb+srv://")):
-                    raise Exception("Invalid MongoDB URI: must start with 'mongodb://' or 'mongodb+srv://'")
+                # if not (mongo_db_url.startswith("mongodb://") or mongo_db_url.startswith("mongodb+srv://")):
+                #     raise Exception("Invalid MongoDB URI: must start with 'mongodb://' or 'mongodb+srv://'")
 
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
                 logging.info("MongoDB client created successfully.")
