@@ -146,6 +146,8 @@ class TrainPipeline:
                 return None
             model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
             
+
+            
         except Exception as e:
             raise MyException(e, sys)
         
