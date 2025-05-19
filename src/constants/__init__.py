@@ -3,11 +3,13 @@ from datetime import date
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 # MongoDB
 DATABASE_NAME = "Proj1"
 COLLECTION_NAME = "Proj1-Data"
-MONGODB_URL_KEY = "MONGODB_URL"
+
+MONGODB_URI_KEY = os.getenv("MONGODB_URI")
 
 # App Config
 PIPELINE_NAME: str = ""
