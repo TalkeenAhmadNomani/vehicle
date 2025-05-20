@@ -6,6 +6,7 @@ plotly
 seaborn
 scikit-learn
 pymongo
+from_root
 dill
 certifi
 PyYAML
@@ -16,6 +17,6 @@ fastapi
 python-multipart
 uvicorn
 jinja2
-imbalanced-learn
+imblearn
 python-dotenv
--e .
+e .
