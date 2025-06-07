@@ -14,7 +14,7 @@ class Proj1Data:
 
     def __init__(self) -> None:
         """
-        Initializes the MongoDB client connection.
+        Initializes the MongoDB client for connecton.
         """
         try:
             self.mongo_client = MongoDBClient(database_name=DATABASE_NAME)
