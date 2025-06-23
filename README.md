@@ -25,7 +25,6 @@
   pip list
   ```
 
----
 
 ## 📊 MongoDB Setup and Data Management
 
